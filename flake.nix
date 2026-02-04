@@ -37,6 +37,9 @@
             cp gta3sc $out/bin/
             mkdir -p $out/share/gta3sc
             cp -r ${self}/config $out/share/gta3sc/
+            
+            # Create symlink so gta3sc can find config files next to the binary
+            ln -s $out/share/gta3sc/config $out/bin/config
 
             runHook postInstall
           '';
