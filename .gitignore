@@ -246,3 +246,5 @@ FakesAssemblies/
 
 # MacOS
 *.DS_Store
+
+result

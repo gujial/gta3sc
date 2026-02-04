@@ -30,17 +30,21 @@
             "-DCMAKE_BUILD_TYPE=Release"
           ];
 
-          postInstall = ''
+          installPhase = ''
+            runHook preInstall
+
             mkdir -p $out/bin
             cp gta3sc $out/bin/
             mkdir -p $out/share/gta3sc
-            cp -r config $out/share/gta3sc/
+            cp -r ${self}/config $out/share/gta3sc/
+
+            runHook postInstall
           '';
 
           meta = with pkgs.lib; {
             description = "A native script compiler/decompiler for GTA 3D Universe";
             homepage = "https://github.com/thelink2012/gta3sc";
-            license = licenses.unfree;
+            license = licenses.mit;
             platforms = [ "x86_64-linux" "aarch64-linux" ];
             maintainers = [ ];
           };

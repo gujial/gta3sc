@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.5)
 project(gta3sc)
 include(deps/CMake/PrecompiledHeader.cmake)
 include(deps/CMake/GetGitRevisionDescription.cmake)
